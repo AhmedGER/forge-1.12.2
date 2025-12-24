@@ -58,11 +58,14 @@ jobs:
           mkdir -p mods
           echo "ℹ️ Mods folder created (place your mods in repo's mods/ folder)"
 
-      - name: Setup Playit Tunnel with Auto-Restart
+      - name: Download and Setup Playit Tunnel
         run: |
-          echo "=== Setting up Playit Tunnel with monitoring ==="
-          
+          echo "=== Downloading Playit ==="
+          curl -SsL https://github.com/playit-cloud/playit-agent/releases/latest/download/playit-linux-amd64 -o playit-linux-amd64
           chmod +x playit-linux-amd64
+          echo "✔ Playit downloaded successfully"
+          
+          echo "=== Setting up Playit Tunnel with monitoring ==="
           
           if [ -n "${{ secrets.PLAYIT_SECRET }}" ]; then
             echo "${{ secrets.PLAYIT_SECRET }}" > playit.toml
