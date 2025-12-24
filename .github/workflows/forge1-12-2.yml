@@ -66,33 +66,34 @@ jobs:
             "https://repo.spongepowered.org/repository/maven-releases/org/spongepowered/spongeforge/1.12.2-2838-7.4.7/spongeforge-1.12.2-2838-7.4.7.jar"
           echo "✓ SpongeForge downloaded (prefixed with _AA to load first)"
           
-          echo "=== Downloading ViaSponge ==="
-          # ViaSponge latest for Sponge 7 (1.12.2)
-          curl -L -o mods/ViaSponge-4.10.2.jar \
-            "https://github.com/ViaVersion/ViaSponge/releases/download/4.10.2/ViaSponge-4.10.2.jar"
-          echo "✓ ViaSponge downloaded"
+          echo "=== Downloading ViaSponge (Java 8 compatible) ==="
+          # ViaSponge 3.3.1 - آخر نسخة تدعم Java 8
+          curl -L -o mods/ViaSponge-3.3.1.jar \
+            "https://github.com/ViaVersion/ViaSponge/releases/download/3.3.1/ViaSponge-3.3.1.jar"
+          echo "✓ ViaSponge 3.3.1 downloaded (Java 8 compatible)"
           
-          echo "=== Downloading ViaVersion ==="
-          # ViaVersion core
-          curl -L -o mods/ViaVersion-5.1.1.jar \
-            "https://github.com/ViaVersion/ViaVersion/releases/download/5.1.1/ViaVersion-5.1.1.jar"
-          echo "✓ ViaVersion downloaded"
+          echo "=== Downloading ViaVersion (Java 8 compatible) ==="
+          # ViaVersion 4.0.0 - آخر نسخة Java 8
+          curl -L -o mods/ViaVersion-4.0.0.jar \
+            "https://github.com/ViaVersion/ViaVersion/releases/download/4.0.0/ViaVersion-4.0.0.jar"
+          echo "✓ ViaVersion 4.0.0 downloaded (Java 8 compatible)"
           
-          echo "=== Downloading ViaBackwards ==="
-          # ViaBackwards for backward compatibility
-          curl -L -o mods/ViaBackwards-5.1.1.jar \
-            "https://github.com/ViaVersion/ViaBackwards/releases/download/5.1.1/ViaBackwards-5.1.1.jar"
-          echo "✓ ViaBackwards downloaded"
+          echo "=== Downloading ViaBackwards (Java 8 compatible) ==="
+          # ViaBackwards 4.0.0 - متوافق مع Java 8
+          curl -L -o mods/ViaBackwards-4.0.0.jar \
+            "https://github.com/ViaVersion/ViaBackwards/releases/download/4.0.0/ViaBackwards-4.0.0.jar"
+          echo "✓ ViaBackwards 4.0.0 downloaded (Java 8 compatible)"
           
-          echo "=== Downloading ViaRewind ==="
-          # ViaRewind for older versions support
-          curl -L -o mods/ViaRewind-4.0.2.jar \
-            "https://github.com/ViaVersion/ViaRewind/releases/download/4.0.2/ViaRewind-4.0.2.jar"
-          echo "✓ ViaRewind downloaded"
+          echo "=== Downloading ViaRewind (Java 8 compatible) ==="
+          # ViaRewind 2.0.2 - آخر نسخة Java 8
+          curl -L -o mods/ViaRewind-2.0.2.jar \
+            "https://github.com/ViaVersion/ViaRewind/releases/download/2.0.2/ViaRewind-2.0.2.jar"
+          echo "✓ ViaRewind 2.0.2 downloaded (Java 8 compatible)"
           
           echo ""
-          echo "✓ All ViaVersion components installed!"
-          echo "ℹ️ Your server now supports clients from 1.7.x to 1.21+"
+          echo "✓ All ViaVersion components installed (Java 8 compatible)!"
+          echo "ℹ️ Your server now supports clients from 1.7.x to 1.17.x"
+          echo "⚠️ Note: These older versions support up to MC 1.17.x"
           echo ""
           ls -lh mods/
 
@@ -157,7 +158,7 @@ jobs:
           echo "╚════════════════════════════════════════════════════════╝"
           echo ""
           echo "✓ Base Version: Minecraft 1.12.2 with Forge"
-          echo "✓ Supported Clients: 1.7.x - 1.21+"
+          echo "✓ Supported Clients: 1.7.x - 1.17.x (Java 8 compatible versions)"
           echo "✓ SpongeForge: Enabled"
           echo "✓ ViaVersion: Active"
           echo ""
@@ -170,7 +171,8 @@ jobs:
           fi
           
           echo ""
-          echo "ℹ️ Players with 1.20.1 can now join your 1.12.2 server!"
+          echo "ℹ️ Players with 1.16.x - 1.17.x can now join your 1.12.2 server!"
+          echo "⚠️ Note: 1.20.1 support needs Java 17+ versions (not compatible with Forge 1.12.2)"
           echo "ℹ️ Type 'stop' in-game to shutdown server immediately"
           echo ""
           
